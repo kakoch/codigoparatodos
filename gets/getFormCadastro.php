@@ -29,7 +29,7 @@
 						}
 						else
 						{
-							$sql = ("INSERT INTO clientes (cpf, nome_cliente, sobrenome_cliente, email, senha,  nascimento, cpf) VALUES ('$CPF','$nome','$snome','$email','$senha','$nasci')");
+							$sql = ("INSERT INTO clientes (cpf, nome_cliente, sobrenome_cliente, email, senha,  nascimento) VALUES ('$CPF','$nome','$snome','$email','$senha','$nasci')");
 							$res=mysqli_query($conn,$sql);
 							$linhas= mysqli_affected_rows($conn);
 							$_SESSION['msg'] = "Cadastrado com sucesso!";

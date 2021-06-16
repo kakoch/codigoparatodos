@@ -10,6 +10,7 @@
             <div class="container">
                 <div>
                     <?php
+                        session_start();
                         if(isset($_SESSION['msg'])){
                             echo $_SESSION['msg'];
                             unset($_SESSION['msg']);
@@ -24,7 +25,7 @@
                     <span>Senha:</span>
                     <input name="senha" type="password"/>
                 </div>
-                <input type="submit" value="consultar">
+                <input type="submit" value="Entrar">
             </div>
         </form>
     </body>
