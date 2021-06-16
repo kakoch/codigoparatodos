@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
 </head>
 	<body >
-        <form action="getFormLogar.php" method="post">
+        <form action="gets/getFormLogar.php" method="post">
             <div class="container">
                 <div>
                     <?php

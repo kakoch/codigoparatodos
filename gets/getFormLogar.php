@@ -1,34 +1,34 @@
+<?php 
 @session_start();
-include('db/conection.php');
+require('../db/connection.php');
 try{
 
-	if(empty($_POST['email_login']) || empty($_POST['senha_login'])) {
-		$_SESSION['e'] = 'Campos em branco!';
+	if(empty($_POST['cpf']) || empty($_POST['senha'])) {
+		$_SESSION['msg'] = 'Campos em branco!';
 		header('Location: logar.php');
 		exit();
 	}
-	$email = mysqli_real_escape_string($conn, $_POST['email_login']);
-	$senha = mysqli_real_escape_string($conn, $_POST['senha_login']);
-	$query = "SELECT * FROM funcionarios where email_func = '$email' and senha_func = '$senha'";
+	$cpf = mysqli_real_escape_string($conn, $_POST['cpf']);
+	$senha = mysqli_real_escape_string($conn, $_POST['senha']);
+    $query = "SELECT * FROM clientes where cpf = '$cpf' and senha = '$senha'";
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_num_rows($result);
 	$rowS= mysqli_fetch_assoc($result);
 	
 	if($row == 1)
 	{
-		$_SESSION['usuario'] = $email;
-		$_SESSION['nome'] = $rowS['nome_func'];
-		header('Location: painel.php');
+		$_SESSION['usuario'] = $nome;
+		header('Location: ../dividas.php');
 		exit();
 	}
 	else
 	{
-		$_SESSION['usuario'] = null;
-		$_SESSION['e'] = "Usuario invalido";
-		header('Location: logar.php');
+		$_SESSION['usuario'] = '';
+		$_SESSION['msg'] = "Usuario invalido";
+		header('Location: ../logar.php');
 		exit();
 	}
-} catch(Exception $e){
-	echo $e->getMessage();
+} catch(Exception $msg){
+	echo $msg->getMessage();
 }
 ?>
