@@ -36,9 +36,10 @@
                     <div>
                         <span>CPF do cliente</span>
                         <input name="cpf" type="text"/>
+                        <input type="submit" value="cadastrar">
                     </div>
                 </form>
-                <input type="submit" value="cadastrar">
+                
             </div>
         </form>
     </body>

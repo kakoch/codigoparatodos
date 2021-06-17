@@ -7,9 +7,9 @@
     $cpf = addslashes($_POST['cpf']);
     $numeroCobra = addslashes($_POST['ncobra']);
     try{
-	    if(!empty($nome) && !empty($cnpj) && !empty($divida) && !empty($cpf) && !empty($ncobra)) 
+	    if(!empty($nome) && !empty($cnpj) && !empty($divida) && !empty($cpf) && !empty($numeroCobra)) 
 	    {		
-	    	$sql = mysqli_query($conn, "SELECT * FROM dividas WHERE n_cobra = '{$numeroCobra}'") or print mysql_error();
+	    	$sql = mysqli_query($conn, "SELECT * FROM dividas WHERE codigo_divida = '{$numeroCobra}'") or print mysql_error();
 	   		if(mysqli_num_rows($sql)>0)
 	   		{
 	        	echo json_encode(array(header('Location: ../index.php')));
@@ -17,16 +17,16 @@
 	    	}
 	    	else
 	    	{
-                $sql = ("INSERT INTO clientes (cpf, nome_cliente, sobrenome_cliente, email, senha,  nascimento) VALUES ('$CPF','$nome','$snome','$email','$senha','$nasci')");
+                $sql = ("INSERT INTO dividas (codigo_divida, nome_empresa, cnpj, valor_divida, clientes_cpf) VALUES ('$numeroCobra','$nome','$cnpj','$divida','$cpf')");
                 $res=mysqli_query($conn,$sql);
                 $linhas= mysqli_affected_rows($conn);
                 $_SESSION['msg'] = "Divida cadastrada com sucesso!";
-                header('Location: ../index.php.php');
+                header('Location: ../index.php');
 			}
         }
 		else
         { 
-            $_SESSION['msg'] = "Erro interno!";
+            $_SESSION['msg'] = "Não foi possivel cadastrar!";
             header('Location: ../index.php');
         }
 	}

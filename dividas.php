@@ -30,7 +30,7 @@
                 </tr>
                 <?php while($dado = $con->fetch_array()){?>
                 <tr>
-                    <td><?php echo $dado['n_cobra']; ?></td>
+                    <td><?php echo $dado['codigo_divida']; ?></td>
                     <td><?php echo $dado['nome_empresa']; ?></td>
                     <td><?php echo $dado['cnpj']; ?></td>
                     <td><?php echo $dado['valor_divida']; ?></td>
