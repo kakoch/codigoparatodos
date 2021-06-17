@@ -8,17 +8,17 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema codigoparatodos
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema codigoparatodos
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `codigoparatodos` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+USE `codigoparatodos` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`clientes`
+-- Table `codigoparatodos`.`clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `codigoparatodos`.`clientes` (
   `id_clientes` INT NOT NULL,
@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`dividas`
+-- Table `codigoparatodos`.`dividas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `codigoparatodos`.`dividas` (
   `id_dividas` INT NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `codigoparatodos`.`dividas` (
   INDEX `fk_dividas_clientes_idx` (`clientes_id_clientes` ASC, `clientes_cpf` ASC) ,
   CONSTRAINT `fk_dividas_clientes`
     FOREIGN KEY (`clientes_id_clientes` , `clientes_cpf`)
-    REFERENCES `mydb`.`clientes` (`id_clientes` , `cpf`)
+    REFERENCES `codigoparatodos`.`clientes` (`id_clientes` , `cpf`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

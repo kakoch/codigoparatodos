@@ -6,6 +6,12 @@
   <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
 </head>
 	<body >
+    <?php
+        session_start();
+        require('db/connection.php');
+        $consulta = "SELECT * FROM dividas WHERE clientes_cpf = '{$_SESSION['cpf']}'" or print mysql_error();
+	    $con = mysqli_query($conn,$consulta);
+    ?>
         <form action="consultaCpf.php" method="post">
             <div class="container">
                 <span>Consultar meu CPF</span>
@@ -13,5 +19,25 @@
                 <input type="submit" value="consultar">
             </div>
         </form>
+        <div>
+            <table class="event">
+                <tr>
+                    <td>ID divida</td>
+                    <td>Nome da empresa</td>
+                    <td>CNPJ </td>
+                    <td>Valor da divida </td>
+                    <td>CPF do cliente</td>
+                </tr>
+                <?php while($dado = $con->fetch_array()){?>
+                <tr>
+                    <td><?php echo $dado['n_cobra']; ?></td>
+                    <td><?php echo $dado['nome_empresa']; ?></td>
+                    <td><?php echo $dado['cnpj']; ?></td>
+                    <td><?php echo $dado['valor_divida']; ?></td>
+                    <td><?php echo $dado['clientes_cpf']; ?></td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
     </body>
 </html>

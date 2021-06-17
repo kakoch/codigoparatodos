@@ -18,6 +18,7 @@ try{
 	if($row == 1)
 	{
 		$_SESSION['usuario'] = $nome;
+		$_SESSION['cpf'] = $cpf;
 		header('Location: ../dividas.php');
 		exit();
 	}

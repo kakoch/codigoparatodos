@@ -22,7 +22,7 @@
 			  	if($senha == $csenha)
 			  	{
 			      	$testa= ("SELECT email FROM clientes WHERE email");
-					if($testa == $email_func)
+					if($testa == $email)
 						{
 							$_SESSION['msg'] = "Email  já cadastrado!";
 							header('Location: ../cadastro.php');

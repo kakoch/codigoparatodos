@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
 </head>
 	<body >
-        <form action="gets/getFormCadastro.php" method="post">
             <div class="container">
                 <div>
                     <?php
@@ -17,7 +16,7 @@
                             }
                     ?>
                 </div>
-                <form action="getFormCadastro.php" method="post">
+                <form action="gets/getFormCadastro.php" method="post">
                     <div>
                         <span>Nome:</span>
                         <input name="nomeCliente" type="text"/>
@@ -46,8 +45,8 @@
                         <span>Confirmar senha:</span>
                         <input name="csenha" type="password"/>
                     </div>
+                    <input type="submit" value="cadastrar">
                 </form>
-                <input type="submit" value="cadastrar">
             </div>
         </form>
     </body>
