@@ -27,6 +27,7 @@
                     <td>CNPJ </td>
                     <td>Valor da divida </td>
                     <td>CPF do cliente</td>
+                    <td>Vamos negociar?</td>
                 </tr>
                 <?php while($dado = $con->fetch_array()){?>
                 <tr>
@@ -35,6 +36,7 @@
                     <td><?php echo $dado['cnpj']; ?></td>
                     <td><?php echo $dado['valor_divida']; ?></td>
                     <td><?php echo $dado['clientes_cpf']; ?></td>
+                    <td class="alt"><a href="renegociar.php?&id=<?php echo $dado['codigo_divida']; ?>">Vamos!</a></td>
                 </tr>
                 <?php } ?>
             </table>

@@ -8,8 +8,9 @@
     $senha = addslashes($_POST['senha']);
     $csenha = addslashes($_POST['csenha']);
     $CPF = addslashes($_POST['CPF']);
+    $salario = addslashes($_POST['salario']);
     try{
-	    if(!empty($nome) && !empty($snome) && !empty($nasci) && !empty($email) && !empty($senha) && !empty($csenha) && !empty($CPF)) 
+	    if(!empty($nome) && !empty($snome) && !empty($nasci) && !empty($email) && !empty($senha) && !empty($csenha) && !empty($CPF) && !empty($salario)) 
 	    {		
 	    	$sql = mysqli_query($conn, "SELECT * FROM clientes WHERE cpf = '{$CPF}'") or print mysql_error();
 	   		if(mysqli_num_rows($sql)>0)
@@ -29,7 +30,7 @@
 						}
 						else
 						{
-							$sql = ("INSERT INTO clientes (cpf, nome_cliente, sobrenome_cliente, email, senha,  nascimento) VALUES ('$CPF','$nome','$snome','$email','$senha','$nasci')");
+							$sql = ("INSERT INTO clientes (cpf, nome_cliente, sobrenome_cliente, email, senha,  nascimento, salario) VALUES ('$CPF','$nome','$snome','$email','$senha','$nasci','$salario')");
 							$res=mysqli_query($conn,$sql);
 							$linhas= mysqli_affected_rows($conn);
 							$_SESSION['msg'] = "Cadastrado com sucesso!";

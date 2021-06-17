@@ -34,6 +34,10 @@
                         <input name="CPF" type="text"/>
                     </div>
                     <div>
+                        <span>Salario:</span>
+                        <input name="salario" type="text"/>
+                    </div>
+                    <div>
                         <span>Email:</span>
                         <input name="email" type="email"/>
                     </div>
