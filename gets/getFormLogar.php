@@ -13,12 +13,13 @@ try{
     $query = "SELECT * FROM clientes where cpf = '$cpf' and senha = '$senha'";
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_num_rows($result);
-	$rowS= mysqli_fetch_assoc($result);
+	$rows = $result->fetch_array()['salario'];
 	
 	if($row == 1)
 	{
 		$_SESSION['usuario'] = $nome;
 		$_SESSION['cpf'] = $cpf;
+		$_SESSION['salario'] = $rows;
 		header('Location: ../dividas.php');
 		exit();
 	}
