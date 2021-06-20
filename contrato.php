@@ -6,13 +6,20 @@
   <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
 </head>
 	<body >
-        <form action="gets/getFormProposta.php" method="post">
+    <?php
+        require('db/checkemprestimo.php');
+        require('db/connection.php');
+        $data = date('d/m/Y');
+        $vezes =addslashes($_POST['vezes']);
+        $mensalidade = addslashes($_POST[$vezes]);      
+    ?>
+        <form action="gets/getFormContrato.php" method="post">
             <div class="container">
                 <span>Termos contrato de emprestimo</span>
-                <p>Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
-                    O presente contrato define as condições gerais aplicáveis ao Empréstimo, concedido pela (NOME DA
-                    EMPRESA SIMPLES DE CRÉDITO), inscrita no CNPJ pelo número (nº do CNPJ da ESC) doravante denominada
-                    Mutuante, e (NOME DA EMPRESA DEVEDORA), inscrita no CNPJ pelo número (nº CNPJ da Devedora),
+                <p style="white-space: pre-line;"><?php echo $vezes;?>Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
+                    O presente contrato define as condições gerais aplicáveis ao Empréstimo, concedido pela CRÉDITO PARA TODXS,
+                    inscrita no CNPJ pelo número 12.123.123/0001-01 doravante denominada
+                    Mutuante, e <?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>, inscrita no CPF pelo número <?php echo $infomacoes['cpf'];?>,
                     doravante denominada Mutuária, de acordo com a Lei Complementar nº 167 de 25/04/2018.
                     CLÁUSULA PRIMEIRA: 
                     DEFINIÇÕES
@@ -114,14 +121,12 @@
                     uma das vias é nesse ato entregue a Contratante Mutuária.
                     (Blumenau), (<?php echo $data;?>)
                     ______________________________________________
-                    (Credito para todxs) ()
                     CONTRATANTE MUTUÁRIA
+                    (<?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>)
                     ______________________________________________
-                    (<?php echo $nome.$sobrenome;?>)
-                    DEVEDORES SOLIDÁRIOS
-                    ______________________________________________
-                    (Nome)
+                    (Credito para todxs)
                     CONTRATADA MUTUANTE
+
                     TESTEMUNHAS
                     _____________________________________________
                     Nome:
@@ -131,41 +136,88 @@
                     Nome:
                     CPF:
                     RG:
-                    <table>
-                        <tr>
-                            <td>Contrato de Empréstimo Empresa Crédito para todxs – (CPT)</td>
-                        </tr>
-                        <tr>
-                            <td>QUADRO RESUMO:</td>
-                            <td>Identificação da Mutuante:</td>
-                            <td>Razão Social:</td>
-                            <td>CNPJ:</td>
-                            <td>Endereço:</td>
-                            <td>Identificação da Mutuária:</td>
-                            <td>Razão Social:</td>
-                            <td>CNPJ:</td>
-                            <td>Endereço:</td>
-                            <td>Dados da operação:</td>
-                            <td>Natureza da operação:</td>
-                            <td>Valor Total Contratado:</td>
-                            <td>Data do contrato:</td>
-                            <td>Quantidade parcelas:</td>
-                            <td>Vencimento da Operação:</td>
-                            <td>Taxa de juros:</td>
-                            <td>Alíquotas IOF:</td>
-                            <td>Garantias acessórias:</td>
-                            <td>Parcelas a vencer</td>
-                            <td>Data de vencimento: Valor:</td>
-                            <td>Parcela 01</td>
-                            <td>Parcela 02</td>
-                            <td>Parcela “n”</td>
-                        </tr>
+                    </p>
+                    <table style="border: 1px solid black;">
+                        <h4>Contrato de Empréstimo Empresa Crédito para todxs – (CPT)</h4> 
+                        <table style="border: 1px solid black;">
+                            <tr>
+                                <th >QUADRO RESUMO:</th>
+                                <th >Identificação da Mutuante:</th>
+                            </tr>
+                            <tr >
+                                <th>Razão Social:</th>
+                                <td >Crédito para todxs</td>
+                            </tr>
+                            <tr>
+                                <th>CNPJ:</th>
+                                <td>12.123.123/0001-01</td>
+                            </tr>
+                            <tr>
+                                <th>Endereço:</th>
+                                <td>Blumenau, Santa Catarina, Brasil.</td>
+                            </tr>
+                        </table>
+                        <table style="border: 1px solid black;">
+                            <tr>
+                                <tr>
+                                    <th>Identificação da Mutuária:</th>
+                                </tr>
+                                <tr>
+                                    <th>Nome:</th>
+                                    <td><?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?></td>
+                                </tr>
+                                <tr>
+                                    <th>CPF:</th>
+                                    <td><?php echo $infomacoes['cpf'];?></td>
+                                </tr>
+                                <tr>
+                                    <th>Endereço:</th>
+                                    <td><?php echo $infomacoes['endereco'].','. $infomacoes['bairro'].','. $infomacoes['cidade'].','.$infomacoes['estado'].','.$infomacoes['pais'];?></td>
+                                </tr>
+                                <tr>
+                                    <th>Natureza da operação:</th>
+                                    <td>Emprestimo</td>
+                                </tr>
+                                <tr>
+                                    <th>Valor Total Contratado:</th>
+                                    <td name="iof" value="<?php echo $r;?>"><?php $r=$valor + $iof; echo 'R$'. number_format($r, 2, ',', '.' );?></td>
+                                </tr>
+                                <tr>
+                                    <th>Data do contrato:</th>
+                                    <td><?php echo $data;?></td>
+                                </tr>
+                                <tr>
+                                    <th>Quantidade parcelas:</th>
+                                    <td><?php echo $vezes;?></td>
+                                </tr>
+                                <tr>
+                                    <th>Taxa de juros:</th>
+                                    <td><?php echo "0,082%"?></td>
+                                </tr>
+                                <tr>
+                                    <th>Alíquotas IOF:</th>
+                                    <td><?php echo 'R$'. number_format($iof, 2, ',', '.' );?></td>
+                                </tr>
+                                <tr>
+                                    <th>Parcelas a vencer</th>
+                                    <td><?php echo $vezes; ?></td>
+                                </tr>
+                                <table style="border: 1px solid black;">
+                                    <tr>
+                                        <th>Data de vencimento:</th>
+                                        <th>Valor:</th>
+                                    </tr>
+                                    <tr>
+                                        <td><?php echo $dataVenc;?></td>
+                                        <td><?php echo 'R$'. $_SESSION['mensalidade'];?></td>
+                                    </tr>
+                                </table>
+                               </tr> 
+                        </table>
                     </table>
-                </p>
-
-
                 
-                <input type="submit" value="consultar">
+                <input type="submit" value="Contratar"/>
+                <a href="index.php">Cancelar</a>
             </div>
         </form>
     </body>

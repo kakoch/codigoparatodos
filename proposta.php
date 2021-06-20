@@ -20,7 +20,7 @@
                 <form action="gets/getFormProposta.php" method="post">
                     <div>
                         <span>Valor a ser emprestado:</span>
-                        <input name="valorEmprest" type="text"/>
+                        <input name="valorEmprest" type="decimal"/>
                         <?php echo $cpf;?>
                     </div>
                     <input type="submit" value="cadastrar">
