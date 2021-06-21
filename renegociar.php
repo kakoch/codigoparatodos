@@ -11,47 +11,42 @@
                     <?php
                         session_start();
                         $id = $_GET['id'];
+                        $_SESSION['id_divida']= $id;
                         require('db/connection.php');
-                        $consulta = "SELECT valor_divida FROM dividas WHERE codigo_divida = '{$id}'" or print mysql_error();
-                        $con = mysqli_query($conn,$consulta);
-                        if(isset($_SESSION['msg'])){
-                            echo $_SESSION['msg'];
-                            unset($_SESSION['msg']);
-                        }
-                        $row = $con->fetch_array()['valor_divida'];
-                        $x5 = 1.2;
-                        $cinco = (($row + ($row / 100 * $x5)) / 5);
-                        $x6 = 1.4;
-                        $seis = (($row + ($row / 100 * $x6)) / 6);
-                        $x7 = 1.6;
-                        $sete = (($row + ($row / 100 * $x7)) / 7);
-                        $x8 = 1.8;
-                        $oito = (($row + ($row / 100 * $x8)) / 8);
-                        $x9 = 1.9;
-                        $nove = (($row + ($row / 100 * $x9)) / 9);
-                        $x10 = 2;
-                        $dez = (($row + ($row / 100 * $x7)) / 10);
-                        $x11 = 2.2;
-                        $onze = (($row + ($row / 100 * $x11)) / 11);
-                        $x12 = 2.3;
-                        $doze = (($row + ($row / 100 * $x12)) / 12);
-                        $x24 = 4;
-                        $vinte4 = (($row + ($row / 100 * $x24)) / 24);
+                        require('db/consultaForRenegociar.php');
+
                     ?>
                 </div>
                 
-                <form action="gets/" method="post">
+                <form action="gets/getFormRenegocio.php" method="post">
                     <div>
-                            <input name="vezes" type="radio" value="5"><?php echo $cinco; ?></input>
-                            <input name="vezes" type="radio" value="6"><?php echo $seis; ?></input>
-                            <input name="vezes" type="radio" value="7"><?php echo $sete; ?></input>
-                            <input name="vezes" type="radio" value="8"><?php echo $oito; ?></input>
-                            <input name="vezes" type="radio" value="9"><?php echo $nove; ?></input>
-                            <input name="vezes" type="radio" value="10"><?php echo $dez; ?></input>
-                            <input name="vezes" type="radio" value="11"><?php echo $onze; ?></input>
-                            <input name="vezes" type="radio" value="12"><?php echo $doze; ?></input>
-                            <input name="vezes" type="radio" value="24"><?php echo $vinte4; ?></input>
-                        </select>
+                    <?php echo $id."|".$_SESSION['situacao'];?>
+                        <tr>
+                            <br><input name="vezes" type="radio" value="1"/> <span>1x </span> <?php echo number_format($x1, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="2"/> <span>2x </span> <?php echo number_format($x2, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="3"/> <span>3x </span> <?php echo number_format($x3, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="4"/> <span>4x </span> <?php echo number_format($x4, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="5"/> <span>5x </span> <?php echo number_format($x5, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="6"/> <span>6x </span> <?php echo number_format($x6, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="7"/> <span>7x </span> <?php echo number_format($x7, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="8"/> <span>8x </span> <?php echo number_format($x8, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="9"/> <span>9x </span> <?php echo number_format($x9, 2, ',', '.' ); ?></br>
+                            <br><input name="vezes" type="radio" value="10"/><span>10x </span><?php echo number_format($x10, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="11"/><span>11x </span><?php echo number_format($x11, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="12"/><span>12x </span><?php echo number_format($x12, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="13"/><span>13x </span><?php echo number_format($x13, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="14"/><span>14x </span><?php echo number_format($x14, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="15"/><span>15x </span><?php echo number_format($x15, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="16"/><span>16x </span><?php echo number_format($x16, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="17"/><span>17x </span><?php echo number_format($x17, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="18"/><span>18x </span><?php echo number_format($x18, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="19"/><span>19x </span><?php echo number_format($x19, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="20"/><span>20x </span><?php echo number_format($x20, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="21"/><span>21x </span><?php echo number_format($x21, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="22"/><span>22x </span><?php echo number_format($x22, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="23"/><span>23x </span><?php echo number_format($x23, 2, ',', '.' );?></br>
+                            <br><input name="vezes" type="radio" value="24"/><span>24x </span><?php echo number_format($x24, 2, ',', '.' );?></br>
+                        </tr>
                         <td><?php echo $row; ?></td>
                     </div>
                     <input type="submit" value="cadastrar">

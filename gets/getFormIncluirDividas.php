@@ -6,6 +6,7 @@
     $divida = addslashes($_POST['divida']);
     $cpf = addslashes($_POST['cpf']);
     $numeroCobra = addslashes($_POST['ncobra']);
+	$s= 2;
     try{
 	    if(!empty($nome) && !empty($cnpj) && !empty($divida) && !empty($cpf) && !empty($numeroCobra)) 
 	    {		
@@ -18,7 +19,7 @@
 	    	}
 	    	else
 	    	{
-                $sql = ("INSERT INTO dividas (codigo_divida, nome_empresa, cnpj, valor_divida, cpf) VALUES ('$numeroCobra','$nome','$cnpj','$divida','$cpf')");
+                $sql = ("INSERT INTO dividas (codigo_divida, nome_empresa, cnpj, valor_divida, cpf, situacao) VALUES ('$numeroCobra','$nome','$cnpj','$divida','$cpf','$s')");
                 $res=mysqli_query($conn,$sql);
                 $linhas= mysqli_affected_rows($conn);
                 $_SESSION['msg'] = "Divida cadastrada com sucesso!";

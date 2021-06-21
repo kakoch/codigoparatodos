@@ -23,6 +23,11 @@
                         <input name="valorEmprest" type="decimal"/>
                         <?php echo $cpf;?>
                     </div>
+                    <div>
+                        <span>Data do vencimento:</span>
+                        <input name="dataVenc" type="date"/>
+                    </div>
+                    <input name="cpf" disabled=""  value="<?php echo $cpf;?>"/>
                     <input type="submit" value="cadastrar">
                 </form>
             </div>

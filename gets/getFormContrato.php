@@ -4,13 +4,14 @@
     $valor = addslashes($_SESSION['valorEmp']);
     $cpf = addslashes($_SESSION['cpf']);
     $vezes = addslashes($_SESSION['vezes']);
-    $venci = addslashes($_SESSION['data_vencimento']);
+    $venci = $_SESSION['dataVenc'];
     $iof = addslashes($_SESSION['iof']);
     $mensalidade = addslashes($_SESSION['mensalidade']);
+    $s = 3;
     try{
-	    if(!empty($valor) && !empty($cpf) && !empty($vezes) && !empty($venci) && !empty($iof) && !empty($mensali)) 
+	    if(!empty($valor) && !empty($cpf) && !empty($vezes) && !empty($venci) && !empty($iof) && !empty($mensalidade)) 
 	    {		
-	    	$sql = ("INSERT INTO emprestimo (valor_solicitado, vezes, mensalidade, data_vencimento, clientes_cpf, iof) VALUES ('$valor','$vezes','$mensali','$venci','$cpf','$iof')");
+	    	$sql = ("INSERT INTO emprestimo (valor_solicitado, vezes, mensalidade, data_vencimento, clientes_cpf, iof, situacao) VALUES ('$valor','$vezes','$mensalidade','$venci','$cpf','$iof','$s')");
             $res=mysqli_query($conn,$sql);
             $_SESSION['msg'] = "Emprestimo cadastrado com sucesso!";
             header('Location: ../dividas.php');

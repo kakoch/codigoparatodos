@@ -9,18 +9,9 @@
     <?php
         session_start();
         require('db/connection.php');
-        $consultaDivida = "SELECT * FROM dividas WHERE cpf = '{$_SESSION['cpf']}'" or print mysql_error();
-	    $conD = mysqli_query($conn,$consultaDivida);
-        $consultaEmprestimo = "SELECT * FROM emprestimo WHERE clientes_cpf = '{$_SESSION['cpf']}'" or print mysql_error();
-	    $conE = mysqli_query($conn,$consultaEmprestimo);
+        require('db/consultaForDividas.php');
+
     ?>
-        <form action="consultaCpf.php" method="post">
-            <div class="container">
-                <span>Consultar meu CPF</span>
-                <input name="consultaCpf" type="text"/>
-                <input type="submit" value="consultar">
-            </div>
-        </form>
         <div>
             <div>
                 <?php
@@ -30,49 +21,52 @@
                         }
                 ?>
             </div>
+            <a href="proposta.php">proposta</a>
             <table class="event">
                 <tr>
-                    <td>ID divida</td>
-                    <td>Nome da empresa</td>
-                    <td>CNPJ </td>
-                    <td>Valor da divida </td>
-                    <td>CPF do cliente</td>
-                    <td>Vamos negociar?</td>
+                    <th>ID divida</th>
+                    <th>Nome da empresa</th>
+                    <th>CNPJ </th>
+                    <th>Valor da divida </th>
+                    <th>CPF do cliente</th>
+                    <th>Situação</th>
+                    <th>Vamos negociar?</th>
                 </tr>
                 <?php while($dado = $conD->fetch_array()){?>
                 <tr>
                     <td><?php echo $dado['codigo_divida']; ?></td>
                     <td><?php echo $dado['nome_empresa']; ?></td>
                     <td><?php echo $dado['cnpj']; ?></td>
-                    <td><?php echo $dado['valor_divida']; ?></td>
+                    <td><?php echo 'R$'.$dado['valor_divida']; ?></td>
                     <td><?php echo $dado['cpf']; ?></td>
+                    <td><?php if($dado['situacao'] == 1){ echo 'Divida em dia!';}elseif($dado['situacao']==2){echo "Divida negativada!";}elseif($dado['situacao'] == 3){echo 'Aguardando analise!';}; ?></td>
                     <td class="alt"><a href="renegociar.php?&id=<?php echo $dado['codigo_divida']; ?>">Vamos!</a></td>
                 </tr>
                 <?php } ?>
             </table>
             <table class="event">
                 <tr>
-                    <td>ID emprestimo</td>
-                    <td>Valor contratado</td>
-                    <td>vezes </td>
-                    <td>Mensalidade</td>
-                    <td>Data vencimento</td>
-                    <td>CPF contratante</td>
-                    <td>IOF pago</td>
-                    <td>Vamos negociar?</td>
+                    <th>ID emprestimo</th>
+                    <th>Valor contratado</th>
+                    <th>vezes </th>
+                    <th>Mensalidade</th>
+                    <th>Data vencimento</th>
+                    <th>CPF contratante</th>
+                    <th>IOF pago</th>
+                    <th>Situação</th>
                 </tr>
-                <?php while($dado2 = $conE->fetch_array()){?>
+                <?php while($dado2 = $conE->fetch_array()){if ($dado2['situacao'] <= 3){ ?>
                 <tr>
                     <td><?php echo $dado2['id_emprestimo']; ?></td>
                     <td><?php echo $dado2['valor_solicitado']; ?></td>
                     <td><?php echo $dado2['vezes']; ?></td>
-                    <td><?php echo $dado2['mensalidade']; ?></td>
-                    <td><?php echo $dado2['data_vencimento']; ?></td>
+                    <td><?php echo 'R$'.$dado2['mensalidade']; ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($dado2['data_vencimento'])); ?></td>
                     <td><?php echo $dado2['clientes_cpf']; ?></td>                    
-                    <td><?php echo $dado2['iof']; ?></td>                    
-                    <td class="alt"><a href="renegociar.php?&id=<?php echo $dado2['id_emprestimo']; ?>">Vamos!</a></td>
+                    <td><?php echo 'R$'.$dado2['iof']; ?></td>                   
+                    <td><?php if($dado2['situacao'] == 1){ echo 'Divida em dia!';}elseif($dado2['situacao']==2){echo "Divida negativada!";}elseif($dado2['situacao'] == 3){echo 'Aguardando analise!';}; ?></td>                   
                 </tr>
-                <?php } ?>
+                <?php }} ?>
             </table>
         </div>
     </body>

@@ -9,14 +9,12 @@
     <?php
         require('db/checkemprestimo.php');
         require('db/connection.php');
-        $data = date('d/m/Y');
-        $vezes =addslashes($_POST['vezes']);
-        $mensalidade = addslashes($_POST[$vezes]);      
+        $data = date('d/m/Y'); 
     ?>
         <form action="gets/getFormContrato.php" method="post">
             <div class="container">
                 <span>Termos contrato de emprestimo</span>
-                <p style="white-space: pre-line;"><?php echo $vezes;?>Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
+                <p style="white-space: pre-line;">Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
                     O presente contrato define as condições gerais aplicáveis ao Empréstimo, concedido pela CRÉDITO PARA TODXS,
                     inscrita no CNPJ pelo número 12.123.123/0001-01 doravante denominada
                     Mutuante, e <?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>, inscrita no CPF pelo número <?php echo $infomacoes['cpf'];?>,
@@ -208,8 +206,8 @@
                                         <th>Valor:</th>
                                     </tr>
                                     <tr>
-                                        <td><?php echo $dataVenc;?></td>
-                                        <td><?php echo 'R$'. $_SESSION['mensalidade'];?></td>
+                                        <td><?php echo  date("d/m/Y", strtotime($_SESSION['dataVenc']));?></td>
+                                        <td><?php echo 'R$'. $mensalidade;?></td>
                                     </tr>
                                 </table>
                                </tr> 
