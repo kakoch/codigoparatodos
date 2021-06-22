@@ -13,13 +13,13 @@
     ?>
         <form action="gets/getFormContrato.php" method="post">
             <div class="container">
-                <span>Termos contrato de emprestimo</span>
-                <p style="white-space: pre-line;">Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
+                <span class="t_contrato">Contrato emprestimo Credito para todxs - (CPT)</span>
+                <p class="texto_contrato" style="white-space: pre-line;"><span class="t_termos">Termos contrato de emprestimo – (CPT)</span>
                     O presente contrato define as condições gerais aplicáveis ao Empréstimo, concedido pela CRÉDITO PARA TODXS,
                     inscrita no CNPJ pelo número 12.123.123/0001-01 doravante denominada
                     Mutuante, e <?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>, inscrita no CPF pelo número <?php echo $infomacoes['cpf'];?>,
                     doravante denominada Mutuária, de acordo com a Lei Complementar nº 167 de 25/04/2018.
-                    CLÁUSULA PRIMEIRA: 
+                    <span class="clausula">CLÁUSULA PRIMEIRA:</span>
                     DEFINIÇÕES
                     a) TAXA DE JUROS TOTAL - É a remuneração da ESC (Custo Efetivo Total do Empréstimo) – é a
                     nomenclatura estabelecida para denominar a remuneração da Mutuante que considera todos os
@@ -40,7 +40,7 @@
                     Contratante Mutuária no momento da contratação, contendo valor solicitado, quantidade de
                     parcelas, datas dos vencimentos das parcelas, juros totais, datas dos vencimentos das parcelas,
                     total a pagar, IOF, incidente e opção das garantias acessórias.
-                    CLÁUSULA SEGUNDA: O EMPRÉSTIMO
+                    <span class="clausula">CLÁUSULA SEGUNDA: O EMPRÉSTIMO</span>
                     a) A Contratada Mutuante concedeu a Contratante Mutuária um Empréstimo no valor mutuado e de
                     acordo com as demais condições indicadas no Quadro Resumo, cujo montante líquido, deduzida a
                     remuneração da ESC, o IOF e eventuais pendências financeiras relativas a contratos anteriores, foi
@@ -53,9 +53,9 @@
                     exigência imediata de qualquer crédito, ou o recebimento após o vencimento, antecipado ou
                     tempestivo, de qualquer debito, não constituirá novação, nem modificação do ajuste, nem
                     qualquer precedente ou expectativa de direito da Contratada Mutuante de execução imediata.
-                    CLÁUSULA TERCEIRA: TARIFAS
+                    <span class="clausula">CLÁUSULA TERCEIRA: TARIFAS</span>
                     a) A Contratada Mutuante não cobrará qualquer valor a título de tarifa de originação do Empréstimo.
-                    CLÁUSULA QUARTA: O PAGAMENTO DO EMPRÉSTIMO
+                    <span class="clausula">CLÁUSULA QUARTA: O PAGAMENTO DO EMPRÉSTIMO</span>
                     a) As parcelas do empréstimo poderão ou não estar representadas por Notas Promissórias, emitidas
                     pela Contratante e avalizadas pelo Devedor Solidário e deverão ser quitadas nos respectivos
                     vencimentos, mediante opção no Quadro Resumo.
@@ -65,11 +65,11 @@
                     e vencimentos, constarão de um anexo, especifico, parte integrante do Contrato.
                     c) Caso a data de vencimento de qualquer das parcelas indicadas no Quadro Resumo não seja Dia Útil,
                     o valor devido deverá ser quitado no dia útil subsequente, sem a incidência de juros moratórios.
-                    CLÁUSULA QUINTA: PAGAMENTO ANTECIPADO DO EMPRÉSTIMO
+                    <span class="clausula">CLÁUSULA QUINTA: PAGAMENTO ANTECIPADO DO EMPRÉSTIMO</span>
                     a) O Empréstimo poderá ser pago antecipadamente para a Contratada Mutuante por opção do
                     Contratante Mutuante aplicando-se a redução proporcional utilizando-se a mesma taxa de juros
                     contratada.
-                    CLÁUSULA SEXTA: ATRASO DA CONTRATANTE MUTUÁRIA
+                    <span class="clausula">CLÁUSULA SEXTA: ATRASO DA CONTRATANTE MUTUÁRIA</span>
                     a) Para efeitos deste Contrato, entende-se por atraso o não pagamento no prazo e pela forma devida,
                     de qualquer quantia de valor da parcela devida, ou qualquer outra obrigação, contraída junto a
                     Contratada Mutuante em decorrência deste Contrato.
@@ -83,7 +83,7 @@
                     - Juros moratórios, cuja a taxa se encontra indicada no Quadro Resumo e que incidirá sobre o valor
                     da parcela em atraso;
                     - Multa moratória de 2% (dois por cento) e que incidirá o sobre o valor da parcela em atraso;
-                    CLÁUSULA SÉTIMA: VENCIMENTO ANTECIPADO DO EMPRÉSTIMO
+                    <span class="clausula">CLÁUSULA SÉTIMA: VENCIMENTO ANTECIPADO DO EMPRÉSTIMO</span>
                     a) No caso de apuração de falsidade, fraude ou inexatidão de qualquer declaração, informação ou
                     documento que houverem sido prestados pela Contratante Mutuária seus representantes legais
                     e/ou garantidores, ocorrerá o vencimento antecipado da totalidade do empréstimo em aberto.
@@ -135,7 +135,7 @@
                     CPF:
                     RG:
                     </p>
-                    <table style="border: 1px solid black;">
+                    <table class="tabela_mutuante" style="border: 1px solid black;">
                         <h4>Contrato de Empréstimo Empresa Crédito para todxs – (CPT)</h4> 
                         <table style="border: 1px solid black;">
                             <tr>
@@ -155,7 +155,7 @@
                                 <td>Blumenau, Santa Catarina, Brasil.</td>
                             </tr>
                         </table>
-                        <table style="border: 1px solid black;">
+                        <table class="tabela_mutuaria" style="border: 1px solid black;">
                             <tr>
                                 <tr>
                                     <th>Identificação da Mutuária:</th>
@@ -214,8 +214,8 @@
                         </table>
                     </table>
                 
-                <input type="submit" value="Contratar"/>
-                <a href="index.php">Cancelar</a>
+                <input class="submit" type="submit" value="Contratar"/>
+                <a class="cancelar" href="index.php">Cancelar</a>
             </div>
         </form>
     </body>

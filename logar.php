@@ -8,7 +8,6 @@
 	<body >
         <form action="gets/getFormLogar.php" method="post">
             <div class="container">
-                <div>
                     <?php
                         session_start();
                         if(isset($_SESSION['msg'])){
@@ -16,16 +15,15 @@
                             unset($_SESSION['msg']);
                             }
                     ?>
-                </div>
-                <div>
+                <div class="cpf">
                     <span>CPF:</span>
                     <input name="cpf" type="text"/>
                 </div>
-                <div>
+                <div class="senha">
                     <span>Senha:</span>
                     <input name="senha" type="password"/>
                 </div>
-                <input type="submit" value="Entrar">
+                <input class="submit" type="submit" value="Entrar">
             </div>
         </form>
     </body>

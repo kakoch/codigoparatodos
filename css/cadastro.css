@@ -1,0 +1,58 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,body{
+    place-items:center;
+    display:grid;
+}
+.container{
+	background: rgb(134, 17, 17);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px 80px 10px 20px;
+    display: block;
+   
+}
+.form_cadastro{
+    display: block;
+    padding: 30px;
+    width: 450px;
+}
+.titulo_cad{
+    font-size: 50px;
+    color: rgb(9, 252, 9);
+}
+.d_c{
+    font-size: 20px;
+    width: 450px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(134, 17, 17,0.1);
+}
+.d_c .i_cad{
+    height: 20px;
+    width: 100%;
+    position: relative;
+}
+.d_c .i_cad input{
+    height: 100%;
+    width: 100%;
+	border: none;
+    border-bottom: 2px solid silver;
+}
+.i_cad input:focus ~ label,
+.i_cad input:valid ~ label{
+    font-size: 15px;
+    transform: translateY(-15px) ;
+}
+.i_cad label {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+}

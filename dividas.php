@@ -40,7 +40,7 @@
                     <td><?php echo 'R$'.$dado['valor_divida']; ?></td>
                     <td><?php echo $dado['cpf']; ?></td>
                     <td><?php if($dado['situacao'] == 1){ echo 'Divida em dia!';}elseif($dado['situacao']==2){echo "Divida negativada!";}elseif($dado['situacao'] == 3){echo 'Aguardando analise!';}; ?></td>
-                    <td class="alt"><a href="renegociar.php?&id=<?php echo $dado['codigo_divida']; ?>">Vamos!</a></td>
+                    <td class="alt"><a href="renegociar.php?&id=<?php echo $dado['codigo_divida']; ?>"><?php if($dado['situacao'] == 2){echo 'Vamos!';}?></a></td>
                 </tr>
                 <?php } ?>
             </table>

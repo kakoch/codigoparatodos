@@ -11,6 +11,7 @@
                 <span>Consultar meu CPF</span>
                 <input name="consultaCpf" type="text"/>
                 <input type="submit" value="consultar">
+                <span>Já tem cadastro?</span><a href="">Acessar!</a>
             </div>
         </form>
     </body>
