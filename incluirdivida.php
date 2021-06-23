@@ -3,39 +3,54 @@
   <meta charset="UTF-8" />
   <title>Cobrar | Crédito Para Todxs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
+  <link rel="stylesheet" type="text/css" href="css\i_dividas.css" />
 </head>
 	<body >
             <div class="container">
-                <div>
+                <span class="t_s_i">Crédito para todxs</span>
+                <span class="d-e">Incluir dividas</span>
+                <div class="i_msg">
                     <?php
                     session_start();
                         if(isset($_SESSION['msg'])){
-                            echo $_SESSION['msg'];
+                            echo '<span class="msg">'.$_SESSION['msg']."</span>";
                             unset($_SESSION['msg']);
                             }
                     ?>
                 </div>
-                <form action="gets/getFormIncluirDividas.php" method="post">
-                    <div>
-                        <span>Nome da empresa:</span>
-                        <input name="nomeEmpresa" type="text"/>
+
+                <form class="form_i" action="gets/getFormIncluirDividas.php" method="post">
+                    <div class="d_i">
+                        <div class="t_i">
+                            <input name="nomeEmpresa" type="text" required/>
+                            <label>Nome da empresa:</label>
+                        </div>
                     </div>
-                    <div>
-                        <span>CNPJ da empresa:</span>
-                        <input name="cnpj" type="text"/>
+                    <div class="d_i">
+                        <div class="t_i">
+                            <input name="cnpj" type="text"required/>
+                            <label>CNPJ da empresa:</label>
+                        </div>
                     </div>
-                    <div>
-                        <span>Numero da cobrança:</span>
-                        <input name="ncobra" type="text"/>
+                    <div class="d_i">
+                        <div class="t_i">
+                            <input name="ncobra" type="text"required/>
+                            <label>Numero da cobrança:</label>
+                        </div>
                     </div>
-                    <div>
-                        <span>Valor da divida</span>
-                        <input name="divida" type="text"/>
+                    <div class="d_i">
+                        <div class="t_i">
+                            <input name="divida" type="text"required/>
+                            <label>Valor da divida</label>
+                        </div>
                     </div>
-                    <div>
-                        <span>CPF do cliente</span>
-                        <input name="cpf" type="text"/>
+                    <div class="d_i">
+                        <div class="t_i">
+                            <input name="cpf" type="text"required/>
+                            <label>CPF do cliente</label>
+                        </div>
+                    </div>
+                    <div class="submit">
                         <input type="submit" value="cadastrar">
                     </div>
                 </form>
