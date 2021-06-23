@@ -16,6 +16,7 @@
                             }
                     ?>
                 </div>
+                <span class="t_s_i">Crédito para todxs</span>
                 <span class="titulo_cad">Cadastro de usuario</span>
                 <form class="form_cadastro" action="gets/getFormCadastro.php" method="post">
                     <div class="d_c">
@@ -130,7 +131,9 @@
                             <label>Confirmar senha:</label>
                         </div>
                     </div>
-                    <input class="submit" type="submit" value="cadastrar">
+                    <div  class="submit">
+                        <input class="submit" type="submit" value="cadastrar">
+                    </div>
                 </form>
             </div>
         </form>

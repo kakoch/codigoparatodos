@@ -1,37 +1,47 @@
 *{
 	margin:0;
 	padding: 0;
-	box-sizing: border-box;
 }
-html,body{
+body{
     place-items:center;
     display:grid;
+    justify-content: center;
+    align-items: center;
+    background-attachment: none;
+    background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
+    margin-top: 10px;
 }
 .container{
-	background: rgb(134, 17, 17);
-    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     padding: 10px 80px 10px 20px;
-    display: block;
-   
+    display: grid;
+    height: 100%;
+	width: 100%;
+}
+.t_s_i{
+    font-size: 50px;
+    font-weight: bolder;
 }
 .form_cadastro{
     display: block;
-    padding: 30px;
+    padding: 10px;
     width: 450px;
 }
 .titulo_cad{
-    font-size: 50px;
-    color: rgb(9, 252, 9);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 100px;
 }
 .d_c{
     font-size: 20px;
-    width: 450px;
-    background: #fff;
+    width: 300px;
+    background: linear-gradient(135deg, #b66dd3 0%, #a442d1 0%, #5f41e7 100%, #521ce6 100%);
     padding: 10px;
-    box-shadow: 0px 0px 10px rgb(134, 17, 17,0.1);
+    box-shadow: 0px 0px 10px rgba(226, 19, 226, 0.1);
+    border-radius: 30px;
+
+    margin-left: 20px;
 }
 .d_c .i_cad{
     height: 20px;
@@ -39,10 +49,30 @@ html,body{
     position: relative;
 }
 .d_c .i_cad input{
+    font-size: 18px;
     height: 100%;
     width: 100%;
 	border: none;
     border-bottom: 2px solid silver;
+    border-radius: 20px;
+    color: rgb(58, 150, 224);
+}
+.d_c .i_cad select{
+    font-size: 18px;
+    height: 100%;
+    width: 50%;
+	border: none;
+    border-bottom: 2px solid silver;
+    border-radius: 20px;
+    color: rgb(58, 150, 224);
+    margin-left: 100px;
+    text-align: center;
+    padding-left: 30px;
+}
+.d_c .i_cad input[type="date"]{
+    text-align: end;
+    width: 90%;
+    padding-left: 35px;
 }
 .i_cad input:focus ~ label,
 .i_cad input:valid ~ label{
@@ -52,7 +82,21 @@ html,body{
 .i_cad label {
     position: absolute;
     bottom: 0px;
-    left: 0;
-    color: grey;
+    left: 35px;
+    top:2px;
+    color: rgb(58, 150, 224);
     pointer-events: none;
+    transition: transform 0.3s ease;
+    border: none;
+    font-weight: bolder;
+}
+.submit input{
+    font-size: 20px;
+    color:aqua;
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    margin-left: 120px;
 }

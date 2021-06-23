@@ -10,7 +10,6 @@
         @session_start();
         require('../db/connection.php');
         include('../db/condicoes.php');
-        //include('../db/checkdividas.php');
         $_SESSION['valorEmp']= $_POST['valorEmprest'];
         $_SESSION['dataVenc'] = $_POST['dataVenc'];
         foreach($soma as $vezes  => $valor){

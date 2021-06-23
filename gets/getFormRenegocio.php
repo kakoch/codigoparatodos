@@ -27,7 +27,7 @@
                 $res=mysqli_query($conn,$sql);                
                 $res2=mysqli_query($conn,$sql2);                
                 unset($_SESSION['msg']);
-                $_SESSION['msg'] = "Renegociado com sucesso!".$vezes."|". $novo_valor."|". $cpf."|". $id_divida."|". $s;
+                $_SESSION['msg'] = "Renegociado com sucesso!";
                 header('Location: ../dividas.php');
 			}
         }
