@@ -3,7 +3,7 @@
   <meta charset="UTF-8" />
   <title> Contrato | Crédito Para Todxs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css\styleFromIndex.css" />
+  <link rel="stylesheet" type="text/css" href="css\contrato.css" />
 </head>
 	<body >
     <?php
@@ -17,7 +17,7 @@
                 <p class="texto_contrato" style="white-space: pre-line;"><span class="t_termos">Termos contrato de emprestimo – (CPT)</span>
                     O presente contrato define as condições gerais aplicáveis ao Empréstimo, concedido pela CRÉDITO PARA TODXS,
                     inscrita no CNPJ pelo número 12.123.123/0001-01 doravante denominada
-                    Mutuante, e <?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>, inscrita no CPF pelo número <?php echo $infomacoes['cpf'];?>,
+                    Mutuante, e <?php echo "<span class='n_contrato'>".$infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente']."</span>";?>, inscrita no CPF pelo número <?php echo $infomacoes['cpf'];?>,
                     doravante denominada Mutuária, de acordo com a Lei Complementar nº 167 de 25/04/2018.
                     <span class="clausula">CLÁUSULA PRIMEIRA:</span>
                     DEFINIÇÕES
@@ -45,7 +45,6 @@
                     acordo com as demais condições indicadas no Quadro Resumo, cujo montante líquido, deduzida a
                     remuneração da ESC, o IOF e eventuais pendências financeiras relativas a contratos anteriores, foi
                     liberado por meio de crédito na conta da Contratante Mutuária. 
-                    Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
                     b) A Contratante Mutuária se obriga a restituir a Contratada Mutuante o valor total devido indicado
                     no Quadro Resumo, sendo que os juros do Empréstimo serão calculados de forma exponencial e
                     capitalizados diariamente, com base em um ano de 365 (trezentos e sessenta e cinco) dias.
@@ -75,7 +74,6 @@
                     Contratada Mutuante em decorrência deste Contrato.
                     b) A configuração de atraso ocorrera independentemente de qualquer aviso ou notificação,
                     resultando do simples descumprimento das obrigações assumidas neste contrato.
-                    Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
                     c) O atraso no pagamento de quaisquer valores devidos, vencidos e não pagos na época em que forem
                     exigíveis por força do disposto neste Contrato, ou nas hipóteses de vencimento antecipado da
                     divida adiante previste, configurará a situação de atraso, ficando a divida sujeita do vencimento ao
@@ -87,7 +85,7 @@
                     a) No caso de apuração de falsidade, fraude ou inexatidão de qualquer declaração, informação ou
                     documento que houverem sido prestados pela Contratante Mutuária seus representantes legais
                     e/ou garantidores, ocorrerá o vencimento antecipado da totalidade do empréstimo em aberto.
-                    CLÁUSULA OITAVA: DISPOSIÇÕES GERAIS
+                    <span class="clausula">CLÁUSULA OITAVA: DISPOSIÇÕES GERAIS</span>
                     b) A Contratante Mutuária seus representantes legais e/ou garantidores declaram que todas as
                     informações fornecidas no momento da solicitação do Empréstimo são verdadeiras, especialmente
                     acerca da licitude da origem da renda e patrimônio, bem como estarem cientes das disposições
@@ -114,30 +112,20 @@
                     testemunhas é título executivo extrajudicial para a cobrança executiva das obrigações assumidas.
                     f) Fica eleito o Foro da Sede da Contratada Mutuante para resolver quaisquer questões relativas ao
                     presente Contrato.
-                    Modelo de Contrato de Empréstimo Empresa Simples de Crédito – (ESC)
+                    Contrato de Empréstimo Crédito para todxs – (CPT)
                     g) O presente contrato é firmado em 3 (três) vias, assinado pelas partes e testemunhas, sendo que
                     uma das vias é nesse ato entregue a Contratante Mutuária.
                     (Blumenau), (<?php echo $data;?>)
                     ______________________________________________
+                    (<?php echo "<span class='n_contrato'>".$infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'].'</span>';?>)
                     CONTRATANTE MUTUÁRIA
-                    (<?php echo $infomacoes['nome_cliente']." ".$infomacoes['sobrenome_cliente'];?>)
                     ______________________________________________
-                    (Credito para todxs)
+                    (CRÉDITO PARA TODXS)
                     CONTRATADA MUTUANTE
-
-                    TESTEMUNHAS
-                    _____________________________________________
-                    Nome:
-                    CPF:
-                    RG:
-                    _____________________________________________
-                    Nome:
-                    CPF:
-                    RG:
                     </p>
-                    <table class="tabela_mutuante" style="border: 1px solid black;">
+                    <table class="tabela_mutuante" ;>
                         <h4>Contrato de Empréstimo Empresa Crédito para todxs – (CPT)</h4> 
-                        <table style="border: 1px solid black;">
+                        <table  class="t_tabela_mutuante">
                             <tr>
                                 <th >QUADRO RESUMO:</th>
                                 <th >Identificação da Mutuante:</th>
@@ -155,10 +143,10 @@
                                 <td>Blumenau, Santa Catarina, Brasil.</td>
                             </tr>
                         </table>
-                        <table class="tabela_mutuaria" style="border: 1px solid black;">
-                            <tr>
+                        <table class="tabela_mutuaria">
                                 <tr>
-                                    <th>Identificação da Mutuária:</th>
+                                    <th >QUADRO RESUMO:</th>
+                                    <th class="th_mutu">Identificação da Mutuária:</th>
                                 </tr>
                                 <tr>
                                     <th>Nome:</th>
@@ -200,22 +188,22 @@
                                     <th>Parcelas a vencer</th>
                                     <td><?php echo $vezes; ?></td>
                                 </tr>
-                                <table style="border: 1px solid black;">
+                                <table class="tabela_baixo">
                                     <tr>
-                                        <th>Data de vencimento:</th>
-                                        <th>Valor:</th>
+                                        <th class="th_data">Data de vencimento:</th>
+                                        <th class="th_valor">Valor da parcela:</th>
                                     </tr>
                                     <tr>
-                                        <td><?php echo  date("d/m/Y", strtotime($_SESSION['dataVenc']));?></td>
-                                        <td><?php echo 'R$'. $mensalidade;?></td>
+                                        <td class="td_data"><?php echo  date("d/m/Y", strtotime($_SESSION['dataVenc']));?></td>
+                                        <td class="mensa"><?php echo 'R$'. $mensalidade;?></td>
                                     </tr>
                                 </table>
-                               </tr> 
                         </table>
                     </table>
-                
-                <input class="submit" type="submit" value="Contratar"/>
-                <a class="cancelar" href="index.php">Cancelar</a>
+                    <div class="submit">
+                        <input class="submit" type="submit" value="Contratar"/>
+                        <a class="cancelar" href="index.php">Cancelar</a>
+                    </div>
             </div>
         </form>
     </body>

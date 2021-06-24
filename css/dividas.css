@@ -127,3 +127,21 @@ html{
     transition: transform 0.3s ease;
     cursor: pointer; 
 }
+.emprestimo a{
+    font-size: 18px;
+    font-weight: bolder;
+    color:rgba(88, 6, 88, 0.938);
+    text-shadow: 2px 1px 3px #521ce6;
+    position: relative;
+    left: 150px;
+    top: 20px;
+    border: solid 2px rgba(224, 14, 224, 0.938);
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+.emprestimo a:hover{
+    color:rgba(121, 12, 121, 0.938);
+    text-shadow: 2px 1px 3px #400eca;
+}

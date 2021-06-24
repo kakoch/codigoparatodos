@@ -69,6 +69,9 @@
                 </tr>
                 <?php }} ?>
             </table>
+            <div class="emprestimo">
+                    <a href="proposta.php">Clique aqui para fazer uma proposta de emprestimo.</a>
+            </div>
         </div>
     </body>
 </html>

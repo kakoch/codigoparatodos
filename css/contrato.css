@@ -1,0 +1,113 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+    place-items:center;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    background-attachment: none;
+    background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
+    margin-top: 50px;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    padding: 10px 80px 10px 20px;
+    display: grid;
+    height: 100%;
+	width: 100%;
+}
+.t_contrato{
+    font-size: 35px;
+    margin: 20px;
+
+}
+.t_termos{
+    font-weight: bold;
+}
+.clausula{
+    font-weight: bold;
+}
+.texto_contrato{
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+.n_contrato{
+    text-transform: uppercase;
+}
+.tabela_mutuante{
+    border: 1px solid black;
+    align-items: center;
+    text-align: initial;
+}
+.t_tabela_mutuante tr th{
+    align-items: center;
+    text-align: initial;
+}
+
+.tabela_mutuaria {
+    border: 1px solid black;
+
+}
+.tabela_mutuaria tr th{
+    text-align: initial;
+
+}
+
+.t_tabela_mutuante{
+    border: 1px solid black;
+}
+.submit input{
+    font-size: 20px;
+    color:aqua;
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    margin-left: 120px;
+}
+
+.th_data{
+    position: relative;
+    left: -100px;
+}
+.th_valor{
+    position: relative;
+    left: -300px;
+}
+.td_data{
+    position: relative;
+    left: 250px;
+    bottom:20px;
+}
+.mensa{
+    position: relative;
+    position: relative;
+    left: 0px;
+    bottom:20px;
+}
+.submit a{
+    font-size: 22px;
+    text-decoration: none;
+    color:aqua;
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(135deg, #9b27ca 0%, #9927cf 0%, #d33639 100%, #f92121 100%);
+    border: solid 2px rgb(34, 33, 33);
+    border-top: solid 2px rgb(131, 134, 136);
+    border-left: solid 2px rgb(131, 134, 136);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.submit a:active{
+    border-top: solid 2px rgb(34, 33, 33);
+    border-left: solid 2px rgb(34, 33, 33);
+    border-bottom: solid 2px rgb(131, 134, 136);
+    border-right: solid 2px rgb(131, 134, 136);
+}
+.tabela_baixo{
+   border: 1px solid black;
+}

@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="d_cpf">
-                        <input name="cpf" disabled=""  value="<?php echo 'Seu é '. $cpf;?>"/>
+                        <input name="cpf" disabled=""  value="<?php echo 'Seu CPF é: '. $cpf;?>"/>
                     </div>
                     <div class="submit">
                         <input type="submit" value="cadastrar">
